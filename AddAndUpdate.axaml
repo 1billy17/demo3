@@ -1,0 +1,21 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="450"
+        x:Class="demo3.AddAndUpdate"
+        Title="AddAndUpdate">
+<StackPanel Spacing="5" VerticalAlignment="Center" HorizontalAlignment="Center">
+        <TextBox Width="300" x:Name="ClientIdTextBox" Watermark="ID"/>
+        <TextBox Width="300" x:Name="FTextBox" Watermark="Фамилия"/>
+        <TextBox Width="300" x:Name="ITextBox" Watermark="Имя"/>
+        <TextBox Width="300" x:Name="OTextBox" Watermark="Отчество"/>
+        <TextBox Width="300" x:Name="EmailTextBox" Watermark="Почта"/>
+        <TextBox Width="300" x:Name="PhoneNumberTextBox" Watermark="Номер телефона"/>
+        <DatePicker x:Name="BirthDatePicker"/>
+        <ComboBox Width="300" x:Name="DateComboBox"/>
+        <Button Width="125" x:Name="SelectImageButton" Content="Выбрать фото"/>
+        <Image Width="60" Height="60"/>
+        <Button Width="125" x:Name="SaveButton" Content="Сохранить"/>
+</StackPanel>
+</Window>

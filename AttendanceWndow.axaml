@@ -1,0 +1,41 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="500"
+        x:Class="demo3.AttendanceWindow"
+        Title="AttendanceWindow">
+        <DockPanel>
+           <StackPanel 
+               HorizontalAlignment="Center"
+               Orientation="Horizontal"
+               DockPanel.Dock="Top" 
+               Spacing="10"
+               Height="50">
+               <TextBlock Width="200" Text="Посещаемость"/>
+           </StackPanel>
+           <ListBox x:Name="ProductListBox">
+               <ListBox.ItemsPanel>
+                   <ItemsPanelTemplate>
+                       <UniformGrid Columns="6"></UniformGrid>
+                   </ItemsPanelTemplate>
+               </ListBox.ItemsPanel>
+               <ListBox.ItemTemplate>
+                   <DataTemplate>
+                       <Border BorderBrush="Gray" BorderThickness="1">
+                           <StackPanel 
+                               HorizontalAlignment="Center" 
+                               VerticalAlignment="Center">
+                               <Image Width="50" Height="50"/>
+                               <StackPanel Orientation="Horizontal">
+                                   <TextBlock TextWrapping="Wrap"/>
+                                   <TextBlock/>
+                               </StackPanel>
+                               <TextBlock/>
+                           </StackPanel>
+                       </Border>
+                   </DataTemplate>
+               </ListBox.ItemTemplate>
+           </ListBox>
+       </DockPanel>
+</Window>
