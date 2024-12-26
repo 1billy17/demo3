@@ -16,46 +16,35 @@
                 <ComboBox VerticalAlignment="Center" Width="100" x:Name="CountComboBox"/>
                 <ComboBox VerticalAlignment="Center" Width="100" x:Name="Sort1Combobox"/>
                 <ComboBox VerticalAlignment="Center" Width="100" x:Name="Sort2Combobox"/>
-                <Button Width="165" x:Name="AddClient" Click="AddClient_OnClick" Content="Добавить клиента"/>
-                <Button Width="165" x:Name="Birthdays" Content="Дни рождения"/>
+                <Button HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="145" x:Name="AddClient" Click="AddClient_OnClick" Content="Добавить клиента"/>
+                <Button HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="145" x:Name="Birthdays" Content="Дни рождения"/>
             </StackPanel>
             <StackPanel
+                Spacing="10"
                 HorizontalAlignment="Center"
                 Orientation="Horizontal"  
                 DockPanel.Dock="Bottom" Height="40">
-                <Button Width="65" x:Name="Back" Content="Назад"/>
+                <Button HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="70" x:Name="Back" Content="Назад"/>
                 <TextBlock VerticalAlignment="Center" Text="Количество"/>
-                <Button Width="65" x:Name="Next" Content="Вперед"/>
+                <Button HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="70" x:Name="Next" Content="Вперед"/>
             </StackPanel>
-            <ListBox x:Name="ProductListBox">
-                <ListBox.ItemsPanel>
-                    <ItemsPanelTemplate>
-                        <UniformGrid Columns="6"></UniformGrid>
-                    </ItemsPanelTemplate>
-                </ListBox.ItemsPanel>
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <Border BorderBrush="Gray" BorderThickness="1">
-                            <StackPanel 
-                                HorizontalAlignment="Center" 
-                                VerticalAlignment="Center">
-                                <Image Width="50" Height="50"/>
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock TextWrapping="Wrap"/>
-                                    <TextBlock/>
-                                </StackPanel>
-                                <TextBlock/>
+            <Border>
+                <ListBox x:Name="ClientsListBox">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="1" />
                             </StackPanel>
-                        </Border>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
-                <ListBox.ContextMenu>
-                    <ContextMenu>
-                        <MenuItem Header="Редактировать" Click="Update_OnClick"/>
-                        <MenuItem Header="Удалить"/>
-                        <MenuItem Header="Посещаемость" Click="Attendance_OnClick"/>
-                    </ContextMenu>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                    <ListBox.ContextMenu>
+                        <ContextMenu>
+                            <MenuItem Header="Редактировать" Click="Update_OnClick"/>
+                            <MenuItem Header="Удалить"/>
+                            <MenuItem Header="Посещаемость" Click="Attendance_OnClick"/>
+                        </ContextMenu>
                     </ListBox.ContextMenu>
-            </ListBox>
+                </ListBox>
+            </Border>
         </DockPanel>
 </Window>

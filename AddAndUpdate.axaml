@@ -12,7 +12,7 @@
         <TextBox Width="300" x:Name="OTextBox" Watermark="Отчество"/>
         <TextBox Width="300" x:Name="EmailTextBox" Watermark="Почта"/>
         <TextBox Width="300" x:Name="PhoneNumberTextBox" Watermark="Номер телефона"/>
-        <DatePicker x:Name="BirthDatePicker"/>
+        <DatePicker Width="300" x:Name="BirthDatePicker"/>
         <ComboBox Width="300" x:Name="DateComboBox"/>
         <Button Width="125" x:Name="SelectImageButton" Content="Выбрать фото"/>
         <Image Width="60" Height="60"/>
