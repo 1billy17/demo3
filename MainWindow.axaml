@@ -3,6 +3,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:CompileBindings="False"
         x:Class="demo3.MainWindow"
         Title="demo3">
         <DockPanel>
@@ -24,16 +25,24 @@
                 HorizontalAlignment="Center"
                 Orientation="Horizontal"  
                 DockPanel.Dock="Bottom" Height="40">
-                <Button HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="70" x:Name="Back" Content="Назад"/>
+                <Button HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="70" x:Name="BackButton" Click="Back_OnClick" Content="Назад"/>
                 <TextBlock VerticalAlignment="Center" Text="Количество"/>
-                <Button HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="70" x:Name="Next" Content="Вперед"/>
+                <Button HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="70" x:Name="NextButton" Click="Next_OnClick" Content="Вперед"/>
             </StackPanel>
             <Border>
-                <ListBox x:Name="ClientsListBox">
+                <ListBox x:Name="ClientsListBox" Margin="10" >
                     <ListBox.ItemTemplate>
                         <DataTemplate>
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="1" />
+                            <StackPanel Orientation="Horizontal" Spacing="10">
+                                <TextBlock Text="{Binding Id}"></TextBlock>
+                                <TextBlock Text="{Binding Gendercode}"></TextBlock>
+                                <TextBlock Text="{Binding Firstname}"></TextBlock>
+                                <TextBlock Text="{Binding Lastname}"></TextBlock>
+                                <TextBlock Text="{Binding Patronymic}"></TextBlock>
+                                <TextBlock Text="{Binding Birthday}"></TextBlock>
+                                <TextBlock Text="{Binding Phone}"></TextBlock>
+                                <TextBlock Text="{Binding Email}"></TextBlock>
+                                <TextBlock Text="{Binding Registrationdate}"></TextBlock>
                             </StackPanel>
                         </DataTemplate>
                     </ListBox.ItemTemplate>

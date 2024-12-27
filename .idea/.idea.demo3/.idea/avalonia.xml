@@ -4,6 +4,7 @@
     <option name="projectPerEditor">
       <map>
         <entry key="AddAndUpdate.axaml" value="demo3.csproj" />
+        <entry key="App.axaml" value="demo3.csproj" />
         <entry key="MainWindow.axaml" value="demo3.csproj" />
       </map>
     </option>
