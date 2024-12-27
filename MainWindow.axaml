@@ -14,9 +14,22 @@
                 Spacing="10"
                 Height="50">
                 <TextBox Width="200" x:Name="SearchTextBox" Watermark="Поиск"/>
-                <ComboBox VerticalAlignment="Center" Width="100" x:Name="CountComboBox"/>
-                <ComboBox VerticalAlignment="Center" Width="100" x:Name="Sort1Combobox"/>
-                <ComboBox VerticalAlignment="Center" Width="100" x:Name="Sort2Combobox"/>
+                <ComboBox VerticalAlignment="Center" Width="100" x:Name="CountComboBox" SelectionChanged="CountComboBox_OnSelectionChanged">
+                    <ComboBoxItem Content="Все"/>
+                    <ComboBoxItem Content="10"/>
+                    <ComboBoxItem Content="50"/>
+                    <ComboBoxItem Content="200"/>
+                </ComboBox>
+                <ComboBox VerticalAlignment="Center" Width="100" x:Name="SortComboBox" SelectionChanged="SortComboBox_OnSelectionChanged">
+                    <ComboBoxItem Content="Фио"/>
+                    <ComboBoxItem Content="Дата"/>
+                    <ComboBoxItem Content="Кол-во посещений"/>
+                </ComboBox>    
+                <ComboBox VerticalAlignment="Center" Width="100" x:Name="GenderSortCombobox" SelectionChanged="GenderSortCombobox_OnSelectionChanged">
+                    <ComboBoxItem Content="Все"/>
+                    <ComboBoxItem Content="Мужской"/>
+                    <ComboBoxItem Content="Женский"/>
+                </ComboBox>    
                 <Button HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="145" x:Name="AddClient" Click="AddClient_OnClick" Content="Добавить клиента"/>
                 <Button HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="145" x:Name="Birthdays" Content="Дни рождения"/>
             </StackPanel>
@@ -26,7 +39,7 @@
                 Orientation="Horizontal"  
                 DockPanel.Dock="Bottom" Height="40">
                 <Button HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="70" x:Name="BackButton" Click="Back_OnClick" Content="Назад"/>
-                <TextBlock VerticalAlignment="Center" Text="Количество"/>
+                <TextBlock VerticalAlignment="Center" x:Name="CountServices"/>
                 <Button HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="70" x:Name="NextButton" Click="Next_OnClick" Content="Вперед"/>
             </StackPanel>
             <Border>
