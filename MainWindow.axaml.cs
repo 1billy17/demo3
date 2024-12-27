@@ -43,7 +43,7 @@ public partial class MainWindow : Window
         
     }
     
-    private void UpdateListBox()
+    public void UpdateListBox()
     {
         var pagedClients = clients.Skip(currentPage * ItemsPerPage).Take(ItemsPerPage).ToList();
         ClientsListBox.ItemsSource = pagedClients;
@@ -52,7 +52,7 @@ public partial class MainWindow : Window
         NextButton.IsEnabled = (currentPage + 1) * ItemsPerPage < clients.Count;
     }
     
-    private void Back_OnClick(object? sender, RoutedEventArgs e)
+    public void Back_OnClick(object? sender, RoutedEventArgs e)
     {
         if (currentPage > 0)
         {
@@ -61,7 +61,7 @@ public partial class MainWindow : Window
         }
     }
 
-    private void Next_OnClick(object? sender, RoutedEventArgs e)
+    public void Next_OnClick(object? sender, RoutedEventArgs e)
     {
         if ((currentPage + 1) * ItemsPerPage < clients.Count)
         {
@@ -70,19 +70,37 @@ public partial class MainWindow : Window
         }
     }
     
-    private void AddClient_OnClick(object? sender, RoutedEventArgs e)
+    public void AddClient_OnClick(object? sender, RoutedEventArgs e)
     {
         AddAndUpdate addAndUpdateButton = new AddAndUpdate();
         addAndUpdateButton.ShowDialog(this);
     }
 
-    private void Update_OnClick(object? sender, RoutedEventArgs e)
+    public void UpdateClient_OnClick(object? sender, RoutedEventArgs e)
     {
         AddAndUpdate updateButton = new AddAndUpdate();
         updateButton.ShowDialog(this);
     }
+    
+    public void DeleteClient_OnClick(object? sender, RoutedEventArgs e)
+    {
+        using var context = new Demo3Context();
+        var client = ClientsListBox.SelectedItem as ClientPresenter;
+        if (client == null) return;
+        var removeClient = context.Clients.Include(it => it.Clientservices).First(it => it.Id == client.Id);
+        if (removeClient == null) return;
+        if (removeClient.Clientservices.Count() > 0) return;
+        context.Clients.Remove(removeClient);
+        
+        if (context.SaveChanges() > 0)
+        {
+            clients.Remove(client);
+            
+            UpdateListBox();
+        }
+    }
 
-    private void Attendance_OnClick(object? sender, RoutedEventArgs e)
+    public void AttendanceClient_OnClick(object? sender, RoutedEventArgs e)
     {
         AttendanceWindow attendanceButton = new AttendanceWindow();
         attendanceButton.ShowDialog(this);

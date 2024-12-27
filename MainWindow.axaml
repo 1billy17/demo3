@@ -48,9 +48,9 @@
                     </ListBox.ItemTemplate>
                     <ListBox.ContextMenu>
                         <ContextMenu>
-                            <MenuItem Header="Редактировать" Click="Update_OnClick"/>
-                            <MenuItem Header="Удалить"/>
-                            <MenuItem Header="Посещаемость" Click="Attendance_OnClick"/>
+                            <MenuItem Header="Редактировать" Click="UpdateClient_OnClick"/>
+                            <MenuItem Header="Удалить" Click="DeleteClient_OnClick"/>
+                            <MenuItem Header="Посещаемость" Click="AttendanceClient_OnClick"/>
                         </ContextMenu>
                     </ListBox.ContextMenu>
                 </ListBox>
